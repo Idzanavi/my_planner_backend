@@ -14,7 +14,7 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.auth import AuthMiddlewareStack
 
 import chat.routing
-from chat.models import ChatUser
+from chat.models import ChatUser, ChatRoom
 
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'planner.settings')
@@ -29,3 +29,4 @@ application = ProtocolTypeRouter({
 })
 
 ChatUser.objects.all().delete()
+ChatRoom.objects.all().delete()
